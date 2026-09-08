@@ -1,0 +1,199 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nakshatra VS - Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <header>
+        <img src="https://up.yimg.com/ib/th/id/OIP.wO515kybUMj6DlkXpzZ1uQHaHa?pid=Api&rs=1&c=1&qlt=95&w=107&h=107"
+             alt="Nakshatra VS Profile Picture"
+             class="profile-img">
+        <h1>Nakshatra VS</h1>
+        <p id="typing"></p>
+        <p id="dateTime"></p>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="themeButton" onclick="toggleTheme()">
+            🌙 Dark Mode
+        </button>
+    </nav>
+    <section id="home" class="home">
+        <div class="home-content">
+            <div>
+                <h2>Hello, I'm Nakshatra VS 👋</h2>
+                <p>
+                    Welcome to my personal portfolio website.
+                </p>
+                <p>
+                    I am passionate about technology,
+                    programming and web development.
+                </p>
+                <button onclick="showMessage()">
+                    Welcome
+                </button>
+            </div>
+                 alt="Web Development"
+                 class="home-img">
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+                 alt="About Nakshatra VS"
+                 class="about-img">
+            <div class="about-text">
+                <p>
+                    I am a student interested in web development,
+                    programming and learning new technologies.
+                </p>
+                <p>
+                    I enjoy creating simple and attractive websites
+                    using HTML, CSS and JavaScript.
+                </p>
+                <p>
+                    My goal is to improve my programming skills
+                    and become a successful software developer.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills">
+            <div class="skill">
+                <img src="https://s.yimg.com/fz/api/res/1.2/1fS6SmxAGl.XZl__xjcWJg--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpbGw7aD00MTI7cHhvZmY9NTA7cHlvZmY9MTAwO3E9ODA7c3M9MTt3PTM4OA--/https://i.pinimg.com/736x/a2/7d/14/a27d14a27b5ef7d35c241d5cc9c1deb4.jpg"
+                     height="100"
+                     width="100"
+                     alt="HTML Logo">
+                <h3>HTML</h3>
+                <p>
+                    Creating the structure of web pages.
+                </p>
+            </div>
+            <div class="skill">
+                <img src="https://up.yimg.com/ib/th/id/OIP.yUIb5S_kj98Eg5tT-Onx1AHaHa?pid=Api&rs=1&c=1&qlt=95&w=111&h=111"
+                     height="100"
+                     width="100"
+                     alt="CSS Logo">
+
+                <h3>CSS</h3>
+                <p>
+                    Designing and styling web pages.
+                </p>
+            </div>
+            <div class="skill">
+                <img src="https://up.yimg.com/ib/th/id/OIP.ZZaV8f0-sI1l6dcdApuE6gHaEK?pid=Api&rs=1&c=1&qlt=95&w=195&h=109"
+                     height="100"
+                     width="100"
+                     alt="JavaScript Logo">
+                <h3>JavaScript</h3>
+                <p>
+                    Adding interactivity to websites.
+                </p>
+            </div>
+            <div class="skill">
+                <img src="https://up.yimg.com/ib/th/id/OIP.xePC9eCXE-p7xCpCMUAaFgHaHa?pid=Api&rs=1&c=1&qlt=95&w=124&h=124"
+                     height="100"
+                     width="100"
+                     alt="Python Logo">
+                <h3>Python</h3>
+                <p>
+                    Developing programs and applications.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <p id="projectCount"></p>
+        <div class="projects">
+            <div class="project">
+                     alt="Portfolio Website">
+                <h3>Portfolio Website</h3>
+                <p>
+                    A personal portfolio website created
+                    using HTML, CSS and JavaScript.
+                </p>
+                <button onclick="showProject('Portfolio Website')">
+                    View Project
+                </button>
+            </div>
+            <div class="project">
+                
+                     alt="Calculator Project">
+                <h3>Calculator</h3>
+                <p>
+                    A simple calculator application created
+                    using HTML, CSS and JavaScript.
+                </p>
+                <button onclick="showProject('Calculator')">
+                    View Project
+                </button>
+            </div>
+            <div class="project">
+                
+                     alt="Student Management System">
+                <h3>Student Management System</h3>
+                <p>
+                    A basic project for managing student
+                    information using programming concepts.
+                </p>
+                <button onclick="showProject('Student Management System')">
+                    View Project
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>📞Contact Me</h2>
+        <div class="contact-container">
+            
+                 alt="Contact Me"
+                 class="contact-img">
+            <form onsubmit="return validateForm()">
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                >
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                >
+                <textarea
+                    id="message"
+                    placeholder="Enter your message"
+                ></textarea>
+                <button type="submit">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+    <button id="topButton" onclick="scrollToTop()">
+        ⬆️
+    </button>
+    <footer>
+        <p>
+            © 2026 Nakshatra VS | My Portfolio
+        </p>
+        <p>
+            Made with ❤️ using HTML, CSS and JavaScript
+        </p>
+    </footer>
+    <script src="portfolio.js"></script>
+
+</body>
+
+</html>
+```

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Foodie - Online Food Delivery</title>
+<link rel="stylesheet" href="food.css">
+</head>
+<body>
+<header class="navbar">
+<div class="logo">🍔 Foodie</div>
+<nav>
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('restaurants')">Restaurants</a>
+<a onclick="showPage('orders')">My Orders</a>
+<a onclick="showPage('profile')">Profile</a>
+</nav>
+<button class="cart-btn" onclick="showPage('cart')">🛒 Cart <span id="cartCount">0</span></button>
+</header>
+<section id="home" class="page active">
+<div class="hero">
+<div>
+<h1>Delicious food, <span>delivered fast.</span></h1>
+<p>Order your favourite food from the best restaurants near you.</p>
+<button onclick="showPage('restaurants')">Order Now 🍕</button>
+</div>
+<div class="hero-food">🍕🍔🍟</div>
+</div>
+<div class="search-area">
+🔍
+<input type="text" id="searchFood" placeholder="Search for food or restaurant..." onkeyup="searchFood()">
+</div>
+<h2>Food Categories</h2>
+<div class="categories">
+<div onclick="filterFood('Pizza')">🍕 <b>Pizza</b></div>
+<div onclick="filterFood('Burger')">🍔 <b>Burger</b></div>
+<div onclick="filterFood('Biryani')">🍛 <b>Biryani</b></div>
+<div onclick="filterFood('Chinese')">🍜 <b>Chinese</b></div>
+<div onclick="filterFood('Dessert')">🍰 <b>Dessert</b></div>
+<div onclick="filterFood('Drinks')">🥤 <b>Drinks</b></div>
+</div>
+<h2>Popular Food</h2>
+<div id="foodContainer" class="food-grid"></div>
+</section>
+<section id="restaurants" class="page">
+<h1>Restaurants Near You</h1>
+<div class="restaurant-grid">
+<div class="restaurant">
+<div class="restaurant-img">🍕</div>
+<h2>Pizza Corner</h2>
+<p>🍕 Italian • ⭐ 4.5</p>
+<span>25-30 min • ₹200 for two</span>
+<button onclick="filterFood('Pizza')">View Menu</button>
+</div>
+<div class="restaurant">
+<div class="restaurant-img">🍛</div>
+<h2>Spice Kitchen</h2>
+<p>🍛 Indian • ⭐ 4.6</p>
+<span>20-25 min • ₹250 for two</span>
+<button onclick="filterFood('Biryani')">View Menu</button>
+</div>
+<div class="restaurant">
+<div class="restaurant-img">🍔</div>
+<h2>Burger Hub</h2>
+<p>🍔 Fast Food • ⭐ 4.4</p>
+<span>15-20 min • ₹180 for two</span>
+<button onclick="filterFood('Burger')">View Menu</button>
+</div>
+<div class="restaurant">
+<div class="restaurant-img">🍜</div>
+<h2>Chinese Wok</h2>
+<p>🍜 Chinese • ⭐ 4.3</p>
+<span>25-35 min • ₹220 for two</span>
+<button onclick="filterFood('Chinese')">View Menu</button>
+</div>
+</div>
+</section>
+<section id="cart" class="page">
+<h1>🛒 Your Cart</h1>
+<div id="cartItems"></div>
+<div class="bill">
+<h2>Bill Details</h2>
+<p>Item Total: <span id="itemTotal">₹0</span></p>
+<p>Delivery Fee: <span>₹40</span></p>
+<p>GST: <span id="gst">₹0</span></p>
+<hr>
+<h2>Total: <span id="grandTotal">₹0</span></h2>
+<button onclick="showPage('checkout')">Proceed to Checkout</button>
+</div>
+</section>
+<section id="checkout" class="page">
+<h1>Checkout</h1>
+<div class="checkout-box">
+<h2>📍 Delivery Address</h2>
+<textarea id="address" placeholder="Enter your full delivery address"></textarea>
+<h2>💳 Payment Method</h2>
+<label><input type="radio" name="payment" value="UPI" checked> UPI</label>
+<label><input type="radio" name="payment" value="Card"> Credit / Debit Card</label>
+<label><input type="radio" name="payment" value="COD"> Cash on Delivery</label>
+<h2>🎟️ Coupon</h2>
+<div class="coupon">
+<input id="coupon" placeholder="Enter coupon">
+<button onclick="applyCoupon()">Apply</button>
+</div>
+<p id="couponMessage"></p>
+<button class="place-order" onclick="placeOrder()">Place Order 🍔</button>
+</div>
+</section>
+<section id="orders" class="page">
+<h1>📦 My Orders</h1>
+<div id="orderHistory">
+<div class="order-card">
+<h3>Order #FD1025</h3>
+<p>🍕 Margherita Pizza × 1</p>
+<p>🍔 Cheese Burger × 2</p>
+<strong>₹538</strong>
+<div class="status">Delivered ✓</div>
+</div>
+</div>
+</section>
+<section id="profile" class="page">
+<div class="profile">
+<div class="profile-avatar">P</div>
+<h1>Nakshatra</h1>
+<p>Nakshatra@gmail.com</p>
+<p>📍 Erode, Tamil Nadu</p>
+<div class="profile-stats">
+<div><b>12</b><small>Orders</small></div>
+<div><b>8</b><small>Favorites</small></div>
+<div><b>4.8</b><small>Rating</small></div>
+</div>
+<button>Edit Profile</button>
+</div>
+</section>
+<section id="tracking" class="page">
+<h1>🚚 Track Your Order</h1>
+<div class="tracking">
+<div class="track active">✓ <b>Order Placed</b><small>10:30 AM</small></div>
+<div class="line"></div>
+<div class="track active">✓ <b>Preparing</b><small>10:35 AM</small></div>
+<div class="line"></div>
+<div class="track active">🛵 <b>Out for Delivery</b><small>10:55 AM</small></div>
+<div class="line"></div>
+<div class="track">🏠 <b>Delivered</b><small>Expected 11:15 AM</small></div>
+</div>
+</section>
+<footer>
+<h2>🍔 Foodie</h2>
+<p>Delicious food delivered to your doorstep.</p>
+<p>© 2026 Foodie. All Rights Reserved.</p>
+</footer>
+<script src="food.js"></script>
+</body>
+</html>
